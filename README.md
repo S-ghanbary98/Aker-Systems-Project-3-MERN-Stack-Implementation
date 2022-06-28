@@ -141,7 +141,7 @@ I create an account on mlab so i can use mongodb as a service. Afterwhich i crea
 
 `DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'`
 
-The index.js is updated to reflect this nes change.
+The index.js is updated to reflect this next change.
 
 ```
 const express = require('express');
@@ -183,4 +183,45 @@ console.log(`Server running on port ${port}`)
 });
 ```
 
+- After starting the server the following result is seen below.
 
+![alt text](/successful_database_connection.png)
+
+
+## Frontend Configuration
+
+```
+"scripts": {
+"start": "node index.js",
+"start-watch": "nodemon index.js",
+"dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
+},
+
+```
+
+
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
